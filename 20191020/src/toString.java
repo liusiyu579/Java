@@ -20,7 +20,6 @@ public class toString {
     }
     public static void main(String[] args) {
         int[] arr=new int[]{1,2,3};
-        String a=print(arr);
-        System.out.println("["+a+"]");
+        System.out.println( print(arr));
     }
 }
