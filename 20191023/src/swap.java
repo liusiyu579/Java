@@ -15,7 +15,7 @@ class Swap1{
     public void setA(int a) {
         this.b = a;
     }
-    public int getB() {
+    public int getB() {//
         return b;
     }
     public void setB(int b) {
