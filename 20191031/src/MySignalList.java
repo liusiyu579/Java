@@ -171,7 +171,7 @@ public class MySignalList {
         }
         return cur;
     }
-    //打印单链表
+    //打印单链表（1）
     public void display2(ListNode newHead){
         ListNode cur=newHead;
         while(cur!=null) {
@@ -180,6 +180,7 @@ public class MySignalList {
         }
         System.out.println();
     }
+	//（2）
     public void display(){
         ListNode cur=this.head;
         while(cur!=null) {
