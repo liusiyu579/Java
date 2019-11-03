@@ -1,8 +1,8 @@
 /**
- * @ClassName MysignalList2
+ * @ClassName MySignalList2
  * @Description TODO
  * @Author lenovo
- * @Date 2019/11/3 22:46
+ * @Date 2019/11/3 23:03
  * @Version 1.0
  **/
 class ListNode2{
@@ -14,9 +14,9 @@ class ListNode2{
     }
 }
 
-public class MysignalList2 {
+public class MySignalList2 {
     public ListNode2 head;
-    public MysignalList2(){
+    public MySignalList2(){
         this.head=null;
     }
     //头插
