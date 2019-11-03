@@ -110,7 +110,6 @@ public class MySignalList {
         return null;
     }
     public void remove(int key) {
-        ListNode cur=this.head;
         if(this.head==null) {
             return;
         }
@@ -171,7 +170,7 @@ public class MySignalList {
         }
         return cur;
     }
-    //打印单链表（1）
+    //打印单链表（2）
     public void display2(ListNode newHead){
         ListNode cur=newHead;
         while(cur!=null) {
@@ -180,7 +179,7 @@ public class MySignalList {
         }
         System.out.println();
     }
-	//（2）
+	//（1）
     public void display(){
         ListNode cur=this.head;
         while(cur!=null) {
@@ -189,4 +188,217 @@ public class MySignalList {
         }
         System.out.println();
     }
+    //单链表的中间节点
+    public ListNode middleNode(){
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(fast != null && fast.next != null) {
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+    //返回第倒数k-1个节点
+    public ListNode findKthToTail(int k){
+        if(k < 0) {
+            return null;
+        }
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(k-1 > 0) {
+            if(fast.next != null) {
+                fast=fast.next;
+                k--;
+            }else {
+                System.out.println("没有这个节点");
+                return null;
+            }
+        }
+        while (fast.next != null) {
+            fast=fast.next;
+            slow=slow.next;
+        }
+        return slow;
+    }
+    //分割单链表
+    public ListNode partition(int x){
+        ListNode cur=this.head;
+        ListNode beforeStart=null;
+        ListNode beforeEnd=null;
+        ListNode afterStart=null;
+        ListNode afterEnd=null;
+        while(cur!=null) {
+            ListNode curNext=cur.next;
+            cur.next=null;
+            if(cur.data<x) {
+                if(beforeStart==null) {
+                    beforeStart=cur;
+                    beforeEnd=beforeStart;
+                }else {
+                    beforeEnd.next=cur;
+                    beforeEnd=beforeEnd.next;
+                }
+            }else {
+                if (afterStart==null){
+                    afterStart=cur;
+                    afterEnd=afterStart;
+                }else{
+                    afterEnd.next=cur;
+                    afterEnd=afterEnd.next;
+                }
+            }
+            //cur=cur.next;
+            cur=curNext;
+        }
+        if(beforeStart==null) {
+            return afterStart;
+        }
+        beforeEnd.next=afterStart;
+        //if(afterStart!=null) {
+        //    afterEnd.next = null;
+        //}
+        return beforeStart;
+    }
+    //遇到重复就删除
+    public ListNode deleteDuplication (){
+        ListNode node=new ListNode(-1);
+        ListNode cur=this.head;
+        ListNode tmp=node;
+        while(cur!=null) {
+            if(cur.next!=null&& cur.data==cur.next.data) {
+                //循环
+                while(cur.next!=null&&cur.data==cur.next.data) {
+                    cur=cur.next;
+                }
+                //退出循环，cur多走一步
+                cur=cur.next;
+                //tmp.next=cur;
+            }else {
+                //当前节点不等于下一个节点
+                tmp.next=cur;
+                cur=cur.next;
+                tmp=tmp.next;
+            }
+        }
+        tmp.next=null;
+        return node.next;
+    }
+    //回文
+    public boolean chkPalindrome(){
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(fast!=null&&fast.next!=null) {
+            fast=fast.next.next;
+            slow=slow.next;
+        }
+
+        //反转
+        ListNode p=slow.next;
+        while(p!=null) {
+            ListNode pNext=p.next;
+            //反转
+            p.next=slow;
+            slow=p;
+            p=pNext;
+        }
+        //slow往前  head往后
+        //直到相遇
+        while(slow!=head) {
+            if(slow.data!=head.data) {
+                return false;
+            }
+            //偶数
+            if(this.head.next==slow) {
+                return true;
+            }
+            slow = slow.next;
+            head = head.next;
+        }
+        return true;
+    }
+    //判断是否有环   一个走一步 一个走两步
+    public boolean hasCycle(){
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(fast!=null&&fast.next!=null) {
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+    //建环
+    public void createLoop(){
+        ListNode cur=this.head;
+        while(cur.next!=null) {
+            cur=cur.next;
+        }
+        cur.next=this.head.next.next.next;
+    }
+    //找环的入口点
+    public ListNode detectCycle (){
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(fast!=null&&fast.next!=null) {
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow) {
+                break;
+                //slow=this.head;
+                //while(slow!=fast) {
+                //    slow=slow.next;
+                //    fast=fast.next;
+                //}
+                //if (slow==fast) {
+                //    return slow;
+                //}
+            }
+        }
+        if(fast==null||fast.next==null)
+        {
+            return null;
+        }
+        //return null;
+        slow=this.head;
+        while(slow!=fast) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return fast;
+    }
+    //求环长度
+    public int listLen(){
+        ListNode fast=this.head;
+        ListNode slow=this.head;
+        while(fast!=null&&fast.next!=null) {
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow) {
+                break;
+                //slow=this.head;
+                //while(slow!=fast) {
+                //    slow=slow.next;
+                //    fast=fast.next;
+                //}
+                //if (slow==fast) {
+                //    return slow;
+                //}
+            }
+        }
+        if(fast==null||fast.next==null)
+        {
+            return -1;
+        }
+        //return null;
+        int count=1;
+        slow=slow.next;
+        while(slow!=fast) {
+            slow = slow.next;
+            count++;
+        }
+        return count;
+    }
+    //
 }
