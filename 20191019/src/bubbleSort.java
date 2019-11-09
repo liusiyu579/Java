@@ -5,7 +5,7 @@ import java.util.Arrays;
  * @Description TODO
  * @Author lenovo
  * @Date 2019/10/19 19:08
- * @Version 1.0
+ * @Version 1.0//
  **/
 public class bubbleSort {
     public static void bubbleSort(int[] array) {
