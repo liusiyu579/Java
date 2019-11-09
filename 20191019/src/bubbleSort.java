@@ -20,6 +20,7 @@ public class bubbleSort {
         }
         System.out.println(Arrays.toString(array));
     }
+	
     public static void main(String[] args) {
         int[] arr=new int[]{2,8,6,4,5};
         bubbleSort(arr);
