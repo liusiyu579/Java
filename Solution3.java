@@ -6,7 +6,7 @@
  *     ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class Solution3 {
     public ListNode partition(ListNode head, int x) {
         if(head == null) {
             return null;
