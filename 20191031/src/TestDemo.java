@@ -94,21 +94,22 @@ public class TestDemo {
         mySignalList.addLast(6);
         mySignalList.addLast(7);
         mySignalList.addLast(9);
-        mySignalList.addLast(12);
-
+        //mySignalList.addLast(12);
+        mySignalList.clear();
         mySignalList.display();
-        MySignalList mySignalList2=new MySignalList();
-        mySignalList2.addLast(2);
-        mySignalList2.addLast(3);
-        mySignalList2.addLast(5);
-        mySignalList2.addLast(8);
-        mySignalList2.addLast(10);
-        mySignalList2.addLast(11);
-        mySignalList2.display();
+        System.out.println("hhhh");
+        //MySignalList mySignalList2=new MySignalList();
+        //mySignalList2.addLast(2);
+        //mySignalList2.addLast(3);
+        //mySignalList2.addLast(5);
+        //mySignalList2.addLast(8);
+        //mySignalList2.addLast(10);
+        //mySignalList2.addLast(11);
+        //mySignalList2.display();
        // mySignalList.display2(mergeTwoLists(mySignalList.head,mySignalList2.head));
-       createCut(mySignalList.head,mySignalList2.head);
-        ListNode node=getIntersectionNode(mySignalList.head,mySignalList2.head);
-        System.out.println(node.data);
+       //createCut(mySignalList.head,mySignalList2.head);
+        //ListNode node=getIntersectionNode(mySignalList.head,mySignalList2.head);
+        //System.out.println(node.data);
 /*
         //mySignalList.display2(mySignalList.reverseList2());
         //mySignalList.display2(mySignalList.reverseList2());

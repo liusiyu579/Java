@@ -141,6 +141,23 @@ public class MySignalList {
             this.head=this.head.next;
         }
     }
+    //防止内存泄漏
+    public void clear(){
+        //一个一个至为null
+        /*
+        if(this.head == null) {
+            return;
+        }
+        while(this.head != null) {
+            ListNode cur = this.head.next;
+            this.head.next = null;
+            this.head = cur;
+        }
+        */
+        //
+        this.head = null;
+    }
+
     //反转单链表(1)
     public ListNode reverseList () {
         ListNode newHead=null;
