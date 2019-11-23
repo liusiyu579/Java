@@ -32,7 +32,7 @@ class Address{
     public Address(int dormic,int floor){
         this.dormic = dormic;
         this.floor = floor;
-    }
+    }//
 
     @Override
     public String toString() {
