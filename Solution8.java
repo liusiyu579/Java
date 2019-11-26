@@ -30,5 +30,5 @@ class Solution8 {
         }
         tmp.next = null;
         return node.next;
-    }
+    }//
 }
