@@ -25,7 +25,7 @@ public class BookList {
     public Book getBook(int pos) {
         return books[pos];
     }
-        public int getSize() {
+    public int getSize() {
         return size;
     }
     public void setSize(int size) {
