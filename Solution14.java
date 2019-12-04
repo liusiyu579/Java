@@ -15,7 +15,7 @@ public class Main{
             j--;
         }
         return true;
-    }
+    }//
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         String str = scan.nextLine();
