@@ -2,7 +2,7 @@
 /**
  * @ClassName 字符串转化（压缩）   “aabbccdaa” -> "2a2b2c1d2a"
  * @Description TODO
- * @Author lenovo
+ * @Author lenovo//
  * @Date 2019/12/5 22:30
  * @Version 1.0
  **/
