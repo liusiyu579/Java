@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @Author lenovo
  * @Date 2019/12/11 18:51
  * @Version 1.0
- **/
+ **///
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
