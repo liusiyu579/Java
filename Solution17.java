@@ -4,7 +4,7 @@ class Solution17 {
     public boolean canThreePartsEqualSum(int[] A) {
         int sum=0;;
         for(int a:A){
-            sum+=a;
+            sum+=a;//
         }
         if(sum%3!=0) {
             return false;
