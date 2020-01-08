@@ -6,7 +6,7 @@
 小镇的法官不相信任何人。
 每个人（除了小镇法官外）都信任小镇的法官。
 只有一个人同时满足属性 1 和属性 2 。
-*/
+*///
 class Solution18 {
     public int findJudge(int N, int[][] trust) {
         int[] a = new int[N+1];//统计出入度
