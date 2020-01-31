@@ -3,12 +3,14 @@ class MyCircularDeque {
     private int[] elem;
     private int size;
     /** Initialize your data structure here. Set the size of the deque to be k. */
-    public MyCircularDeque(int k) {
+    //构造函数,双端队列的大小为k。
+	public MyCircularDeque(int k) {
         elem=new int[k];
     }
     
     /** Adds an item at the front of Deque. Return true if the operation is successful. */
-    public boolean insertFront(int value) {
+    //将一个元素添加到双端队列头部。 如果操作成功返回 true。
+	public boolean insertFront(int value) {
         if(isFull()){
             return false;
         }
@@ -21,7 +23,8 @@ class MyCircularDeque {
     }
     
     /** Adds an item at the rear of Deque. Return true if the operation is successful. */
-    public boolean insertLast(int value) {
+    //将一个元素添加到双端队列尾部。如果操作成功返回 true。
+	public boolean insertLast(int value) {
         if(isFull()){
             return false;
         }
@@ -31,7 +34,8 @@ class MyCircularDeque {
     }
     
     /** Deletes an item from the front of Deque. Return true if the operation is successful. */
-    public boolean deleteFront() {
+    //从双端队列头部删除一个元素。 如果操作成功返回 true。
+	public boolean deleteFront() {
         if(isEmpty()){
             return false;
         }
@@ -44,7 +48,8 @@ class MyCircularDeque {
     }
     
     /** Deletes an item from the rear of Deque. Return true if the operation is successful. */
-    public boolean deleteLast() {
+    //从双端队列尾部删除一个元素。如果操作成功返回 true。
+	public boolean deleteLast() {
         if(isEmpty()){
             return false;
         }
@@ -54,21 +59,25 @@ class MyCircularDeque {
     }
     
     /** Get the front item from the deque. */
-    public int getFront() {
+    //从双端队列头部获得一个元素。如果双端队列为空，返回 -1。
+	public int getFront() {
         return size==0?-1:elem[0];
     }
     
     /** Get the last item from the deque. */
-    public int getRear() {
+    //获得双端队列的最后一个元素。 如果双端队列为空，返回 -1。
+	public int getRear() {
         return size==0?-1:elem[size-1];
     }
     
     /** Checks whether the circular deque is empty or not. */
-    public boolean isEmpty() {
+    //检查双端队列是否为空。
+	public boolean isEmpty() {
         return size==0;
     }
     
     /** Checks whether the circular deque is full or not. */
+    //检查双端队列是否满了。
     public boolean isFull() {
         return size == elem.length;
     }
