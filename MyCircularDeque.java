@@ -23,7 +23,7 @@ class MyCircularDeque {
     }
     
     /** Adds an item at the rear of Deque. Return true if the operation is successful. */
-    //将一个元素添加到双端队列尾部。如果操作成功返回 true。
+    // 将一个元素添加到双端队列尾部。如果操作成功返回 true。
 	public boolean insertLast(int value) {
         if(isFull()){
             return false;
