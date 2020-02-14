@@ -6,6 +6,7 @@
  * @Date 2019/12/5 22:30
  * @Version 1.0
  **/
+  
 public class Test2 {
     public static void func(String str) {
         int count = 1;
